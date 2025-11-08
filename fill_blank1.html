@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fill Blank-001</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="image/favicon.png">
+    <link href="./css/main.css" rel="stylesheet" type="text/css" />
+    <link href="./css/responsive.css" rel="stylesheet" type="text/css" />
+    <link href="./css/dropdownmenu.css" rel="stylesheet" type="text/css" />
+    <link href="./css/multiple_choice.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/style-blank.css">
+</head>
+<body>
+    <div class="container">
+        <div id="includeHtml"></div>
+        <h3>Choose the appropriate word to fill in the box in the following sentence.</h3>
+
+        <div id="answerBox" class="answer-box">
+        </div>
+
+        <div id="quizQuestions" class="quiz-questions">
+            <h2>Fill in the blank - 001</h2>
+            <div id="questions" class="question"></div>
+        </div>
+
+        <button id="submitBtn">Submit Answers</button>
+        <button id="restartBtn">Restart</button>
+        <button id="changeCourseBtn"><a href="fill_blank.html" style="text-decoration:none;">Choose other Question</a></button>
+        <div id="results" class="results-area"></div>
+    </div>
+
+    <script src="js/fill_blank1.js"></script>
+    <script>
+     // Ensure the script runs after the DOM is ready (which $() does)
+     $(function () {
+        $.get('menubar.html', appndHtml);
+        function appndHtml(data) {
+             // The .prepend() method will insert the menubar HTML inside the includeHtml div
+             $("#includeHtml").prepend(data);
+        }
+     });
+    </script>
+</body>
+</html>
