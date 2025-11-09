@@ -3,16 +3,30 @@ $(document).ready(function () {
 	var colorArray = ["#019875", "#1E8BC3", "#74B72E"];
 	var cardState;
 	var currentQuestion = 0;
-	var qbank = [["憤懣", "ふんまん"],
-		["錯綜", "さくそう"],
-		["嗜好", "しこう"],
-		["瓦礫", "がれき"],
-		["踏襲", "とうしゅう"],
-		["軋轢", "あつれき"],
-		["該博", "がいはく"],
-		["払拭", "ふっしょく"],
-		["専横", "せんおう"],
-		["寛容", "かんよう"]];
+	var qbank = [
+        ["အရမ်းခံစားမနေပါနဲ့။ <br> ခံစားသော=emotional", "Don't be <br> so emotional."],
+		["စိတ်မကောင်းပါဘူးလို့ ကျွန်တော်ပြောချင်ပါတယ်။", "I'd like to say <br> I'm sorry."],
+		["ငါ့ကို အချက်အလက်တွေ မျှဝေတာအတွက် ကျေးဇူးတင်ပါတယ်။ <br> မျှဝေသည်= share with", "Thank you for <br> sharing the information <br> with me."],
+		["ဆောရီး။ <br>ငါမင်းကို နှိုးလိုက်မိတာလား။", "Sorry,<br> did I wake you?"],
+		["ငါဘယ်မှာ <br>စာရင်းသွင်းရမလဲ။<h6> စာရင်းသွင်း= sign up</h6>" , "Where can I <br>sign up?"],
+		["ငါမင်းကို <br> ထိခိုက်စေခဲ့တာလား။", "Did I <br> hurt you?"],
+		["အတိတ်က အမှားတွေကို <br> ခေါင်းထဲမထားကြရအောင်။<h6> ခေါင်းထဲထည့်စဉ်းစား= dwell on</h6>", "Let's not dwell on <br>past mistakes."],
+		["ငါလွန်သွားလား။<br><h6> လွန်သွား= go too far</h6>", "Did I go <br> too far."],
+		["ငါဘယ်မှာ <br>လက်ဆောင်ပစ္စည်းဆိုင်ရှာလို့တွေ့နိုင်မလဲ။", "Where can<br> I find a souvenir shop?"],
+		["ဒီရုပ်ရှင်<br> ဘယ်လိုလဲ။", "How was <br>this movie?"],
+        ["မင်းရဲ့စိတ်ပူပေးမှုအတွက် <br>ကျေးဇူးတင်ပါတယ်<h6> စိတ်ပူခြင်း= concern</h6>", "Thank you for <br>your concern."],
+        ["ငါ အပြင်မှာ <br>သွားစားတော့မယ်။", "I'm going to<br> eat out."],
+        ["စာမေးပွဲ <br>ဘယ်လိုလဲ။", "How was<br> the test?"],
+        ["ငါ အဲ့ဒီစာရွက်စာတမ်းတွေ <br>ဘယ်မှာရနိုင်မလဲ။", "Where can I receive<br> those document?"],
+        ["ဝမ်းမနည်းပါနဲ့။", "Don't be<br> sad."],
+        ["ငါစက်ဘီး အသစ်<br>ဝယ်တော့မယ်။", "I'm going to buy<br> a new bike."],
+        ["ငါ ငါ့ဖုန်းကို <br>ဘယ်မှာအားသွင်းလို့ရနိုင်မလဲ။", "Where can I charge<br> my phone?"],
+        ["မတွန့်တိုပါနဲ့။<h6> တွန့်တိုသော= stingy</h6>", "Don't be <br>stingy."],
+        ["အမှတ်ရစရာတွေအတွက် <br>ကျေးဇူးတင်ပါတယ်။", "Thank you <br>for many memories."],
+        ["ငါ ကပ်ကိတ်တွေ <br>ဖုတ်တော့မယ်။", "I'm going to bake cupcakes."],
+        ["အလျင်စလို မလုပ်ကြရအောင်။ <br> အလျင်စလိုလုပ်သည်= rush into things", "Let's not rush into things."],
+        ["ငါ ဒီပလတ်စတစ်ဘူးကို <br>ဘယ်မှာလွှင့်ပစ်လို့ရနိုင်မလဲ။<br> လွှင့်ပစ်သည်= throw away", "Where can I throw away <br>this plastic bottle?"]
+    ];
 
 
 	// ★追加: 最初に表示するカード (0: card1/問題, 1: card2/答え)
@@ -103,10 +117,10 @@ $(document).ready(function () {
         if (firstCard === 0) {
             // card1/問題が上
             $("#card1").css("top", "0px");
-            $("#card2").css("top", "200px");
+            $("#card2").css("top", "310px");
         } else {
             // card2/答えが上
-            $("#card1").css("top", "-200px"); // card1を上に隠す
+            $("#card1").css("top", "-310px"); // card1を上に隠す
             $("#card2").css("top", "0px");
         }
 
@@ -117,15 +131,15 @@ $(document).ready(function () {
             if (cardState == 0) {
                 // card1が上 -> card2が上へ
                 cardState = 1; // アニメーション中
-                $("#card1").animate({ top: "-=200" }, 150);
-                $("#card2").animate({ top: "-=200" }, 150, function () {
+                $("#card1").animate({ top: "-=310" }, 150);
+                $("#card2").animate({ top: "-=310" }, 150, function () {
                     cardState = 2; // card2表示状態
                 });
             } else if (cardState == 2) {
                 // card2が上 -> card1が上へ
                 cardState = 1; // アニメーション中
-                $("#card1").animate({ top: "+=200" }, 150);
-                $("#card2").animate({ top: "+=200" }, 150, function () {
+                $("#card1").animate({ top: "+=310" }, 150);
+                $("#card2").animate({ top: "+=310" }, 150, function () {
                     cardState = 0; // card1表示状態
                 });
             }
@@ -158,11 +172,11 @@ $(document).ready(function () {
 
     // 未使用だが元のコードに残されていた関数
     function togglePosition() {
-        if ($("#card1").position().top == -200) { $("#card1").css("top", "200px"); };
+        if ($("#card1").position().top == -310) { $("#card1").css("top", "310px"); };
     }
 
     function togglePosition2() {
-        if ($("#card2").position().top == -200) { $("#card2").css("top", "200px"); };
+        if ($("#card2").position().top == -310) { $("#card2").css("top", "310px"); };
     }
 
     function displayFinalMessage() {
