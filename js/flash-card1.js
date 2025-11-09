@@ -10,7 +10,7 @@ $(document).ready(function () {
 		["ဆောရီး။ <br>ငါမင်းကို နှိုးလိုက်မိတာလား။", "Sorry,<br> did I wake you?"],
 		["ငါဘယ်မှာ <br>စာရင်းသွင်းရမလဲ။<h6> စာရင်းသွင်း= sign up</h6>" , "Where can I <br>sign up?"],
 		["ငါမင်းကို <br> ထိခိုက်စေခဲ့တာလား။", "Did I <br> hurt you?"],
-		["အတိတ်က အမှားတွေကို <br> ခေါင်းထဲမထားကြရအောင်။<h6> ခေါင်းထဲထည့်စဉ်းစား= dwell on</h6>", "Let's not dwell on <br>past mistakes."],
+		["အတိတ်က အမှားတွေကို <br> ခေါင်းထဲမထားကြရအောင်။<br>※ခေါင်းထဲထည့်စဉ်းစား=dwell on", "Let's not dwell on <br>past mistakes."],
 		["ငါလွန်သွားလား။<br><h6> လွန်သွား= go too far</h6>", "Did I go <br> too far."],
 		["ငါဘယ်မှာ <br>လက်ဆောင်ပစ္စည်းဆိုင်ရှာလို့တွေ့နိုင်မလဲ။", "Where can<br> I find a souvenir shop?"],
 		["ဒီရုပ်ရှင်<br> ဘယ်လိုလဲ။", "How was <br>this movie?"],
