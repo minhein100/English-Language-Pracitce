@@ -82,8 +82,8 @@ div.content {
     text-align:center;
     /* REMOVE line-height:310px; */
     /* line-height:75px; <-- Use a reasonable value like normal or 1.2 if you need specific line spacing. */
-    line-height:75px;
-    font-size:30px;
+    line-height:50px;
+    font-size:25px;
     color:#efefef;
     font-family:Meiryo;
     cursor:pointer;
