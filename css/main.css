@@ -68,11 +68,22 @@ div.content {
 
 .card{
     width:340px;
-    height:200px;
+    height:310px;
     position:absolute;
+    /* 1. Set the container to a Flexbox */
+    display: flex;
+    /* 2. Vertically center the content */
+    align-items: center;
+    /* 3. Horizontally center the content (the entire block of text) */
+    justify-content: center;
+    /* 4. Allow the centered content to wrap/stack */
+    flex-direction: column;
+    /* Keep text-align for centering individual lines of text */
     text-align:center;
-    line-height:200px;
-    font-size:45px;
+    /* REMOVE line-height:310px; */
+    /* line-height:75px; <-- Use a reasonable value like normal or 1.2 if you need specific line spacing. */
+    line-height:75px;
+    font-size:30px;
     color:#efefef;
     font-family:Meiryo;
     cursor:pointer;
@@ -80,7 +91,7 @@ div.content {
 
 .card2{
     width:340px;
-    height:200px;
+    height:310px;
     position:absolute;
     text-align:left;
     padding-top: 5px;
